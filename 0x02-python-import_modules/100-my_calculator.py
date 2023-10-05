@@ -1,26 +1,33 @@
 #!/usr/bin/python3
-from calculator_1 import add, sub, mul, div
 from sys import argv
+from calculator_1 import add, sub, mul, div
 
+if __name__ == '__main__':
+    l_av = len(argv) - 1
 
-def run():
-    if len(argv) != 3:
-        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
-        exit(1)
-    a = int(argv[1])
-    b = int(argv[3])
-    if argv[2] == "+":
-        print("{} + {} = {}".format(a, b, add(a, b)))
-    elif argv[2] == "-":
-        print("{} - {} = {}".format(a, b, sub(a, b)))
-    elif argv[2] == "*":
-        print("{} * {} = {}".format(a, b, mul(a, b)))
-    elif argv[2] == "/":
-        print("{} / {} = {}".format(a, b, div(a, b)))
+    if l_av == 3:
+        operator = argv[2]
+        num_a = int(argv[1])
+        num_b = int(argv[3])
+        if operator == '+':
+            res = add(num_a, num_b)
+            print('{:d} + {:d} = {:d}'.format(num_a, num_b, res))
+            exit(0)
+        elif operator == '-':
+            res = sub(num_a, num_b)
+            print('{:d} - {:d} = {:d}'.format(num_a, num_b, res))
+            exit(0)
+        elif operator == '*':
+            res = mul(num_a, num_b)
+            print('{:d} * {:d} = {:d}'.format(num_a, num_b, res))
+            exit(0)
+        elif operator == '/':
+            res = div(num_a, num_b)
+            print('{:d} / {:d} = {:d}'.format(num_a, num_b, res))
+            exit(0)
+        else:
+            print('Unknown operator. Available operators: +, -, * and /')
+            exit(1)
     else:
-        print("Unknown operator. Available operators: +, -, * and /")
+        print('Usage: ./100-my_calculator.py <a> <operator> <b>')
         exit(1)
-
-
-if __name__ == "__main__":
-    run()
