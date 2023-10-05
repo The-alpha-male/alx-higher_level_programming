@@ -1,10 +1,13 @@
 #!/usr/bin/python3
 import sys
 
-if __name__ == "__main__":
-    def main():
-        list_arg = sys.argv
-        sum = 0
-        for count in range(1, len(list_arg)):
-            sum += int(list_arg[count])
-        print("{}".format(sum))
+if __name__ == '__main__':
+    av = sys.argv
+    l_av = len(av)
+    sum = 0
+
+    if l_av > 1:
+        for i in range(1, l_av):
+            sum += int(av[i])
+
+    print(sum)
