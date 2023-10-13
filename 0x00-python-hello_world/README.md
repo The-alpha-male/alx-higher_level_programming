@@ -35,7 +35,6 @@ You have to use f-strings
 
 ## 5-print_string.py
 Complete this source code in order to print 3 times a string stored in the variable str, followed by its first 9 characters.
-
 You can find the source code [here](https://github.com/alx-tools/0x00.py/blob/master/5-print_string.py)
 The output of the program should be:
 3 times the value of str
@@ -47,7 +46,6 @@ Your program should be maximum 5 lines long
 
 ## 6-concat.py
 Complete this source code to print ``Welcome to Holberton School!``
-
 You can find the source code [here](https://github.com/alx-tools/0x00.py/blob/master/6-concat.py)
 You are not allowed to use any loops or conditional statements.
 You have to use the variables str1 and str2 in your new line of code
@@ -64,7 +62,6 @@ middle_word should contain the value of the variable word without the first and 
 
 ## 8-concat_edges.py
 Complete this source code to print `object-oriented programming with Python`, followed by a new line.
-
 You can find the source code [here](https://github.com/alx-tools/0x00.py/blob/master/8-concat_edges.py)
 You are not allowed to use any loops or conditional statements
 Your program should be exactly 5 lines long
