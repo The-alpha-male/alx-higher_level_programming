@@ -1,44 +1,59 @@
 #!/usr/bin/python3
+"""
+This module prints a text with a 2 new lines after each of
+these characters: `.`, `?`, `:`
+Example:
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.$
+    $
+    Quonam modo?$
+    $
+    Utrum igitur tibi litteram videor an totas paginas commovere?$
+    $
+    Non autem hoc:$
+    $
+    * text must be a string
+    * There should be no space at the beginning or
+    at the end of each printed line
+"""
 
-"""this function define text-indentation."""
 
 def text_indentation(text):
-    """ function prints text with two new lines after each '.', '?', and ':'.
-
+    """
+    Prints a text with indentation
     Args:
-        text (string): The text to be printed.
+        text (str): The text to prints.
     Raises:
-        TypeError: If text is not a string.
+        TypeError: If `text` isn't string.
     """
 
-    # Check if input is a string
-    if not isinstance(text, str):
-        raise TypeError("text must be a string")
+    if type(text) is not str:
+        raise TypeError('text must be a string')
 
-    # Skip any whitespace
-    e = 0
-    while e < len(text) and text[e] == ' ':
-        e += 1
+    text_length = len(text)
+    idx = 0
+    new_string = ''
+    starting = True
 
-    # Loop characters in input string
-    while e < len(text):
-        # Print current char with no newline
-        print(text[e], end="")
-
-        # Check if we need to add newlines
-        if text[e] == "\n" or text[e] in ".?:":
-            # If the character is one of '.', '?', or ':', add two newlines
-            if text[e] in ".?:":
-                print("\n")
-            print("\n")
-
-            # Skip over any leading whitespace
-            e += 1
-            while e < len(text) and text[e] == ' ':
-                e += 1
-
-            # Continue
+    while idx < text_length:
+        if text[idx] == ' ' and starting is True:
+            idx += 1
             continue
 
-        # Increment character index
-        e += 1
+        starting = False
+
+        if text[idx] in '.?:':
+            new_string += text[idx]
+            new_string += '\n'
+            new_string += '\n'
+            idx += 1
+
+            while idx < text_length and text[idx] == ' ':
+                idx += 1
+
+            continue
+
+        if idx < text_length:
+            new_string += text[idx]
+            idx += 1
+
+    print(new_string, end='')
