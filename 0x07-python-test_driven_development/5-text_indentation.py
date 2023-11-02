@@ -1,26 +1,21 @@
 #!/usr/bin/python3
-
-"""Text Indentation Module."""
-
-
+'''
+this module contains a function that prints a text with 2 new lines after each of these characters: ., ? and :
+'''
 def text_indentation(text):
-    """
-    Print with rightful Indentation.
-
+    """Prints a text with 2 new lines after each of these characters: ., ? and :
     Args:
-        text(str): string to be printed
-
-    Raise:
-        TypeError: if text is not a string
-
-    Return:
-        None
+        text (str): text to print
+    Raises:
+        TypeError: text must be a string
     """
-    if not type(text) is str:
+    if type(text) is not str:
         raise TypeError("text must be a string")
-    for i, ch in enumerate(text):
-        if ch == ' ' and text[i - 1] in ['.', ':', '?']:
-            continue
-        print(ch, end='')
-        if ch in ['.', ':', '?']:
+    for i in range(0, len(text)):
+        print(text[i], end="")
+        if text[i] == "." or text[i] == "?" or text[i] == ":":
             print("\n")
+            if i < len(text) - 1 and text[i + 1] == " ":
+                i += 1
+                
+            
