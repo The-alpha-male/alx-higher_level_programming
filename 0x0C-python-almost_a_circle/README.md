@@ -57,13 +57,13 @@ Update the class `Rectangle` by overriding the __str__ method so that it returns
 ## models/rectangle.py
 Update the class `Rectangle` by improving the public method `def display(self):` to print in stdout the `Rectangle` instance with the character # by taking care of `x` and `y`
 ## models/rectangle.py
-Update the class Rectangle by adding the public method def update(self, *args): that assigns an argument to each attribute:
+Update the class `Rectangle` by adding the public method `def update(self, *args):` that assigns an argument to each attribute:
 
-- 1st argument should be the id attribute
-- 2nd argument should be the width attribute
-- 3rd argument should be the height attribute
-- 4th argument should be the x attribute
-- 5th argument should be the y attribute
+- 1st argument should be the `id` attribute
+- 2nd argument should be the `width` attribute
+- 3rd argument should be the `height` attribute
+- 4th argument should be the `x` attribute
+- 5th argument should be the `y` attribute
 
 ## models/rectangle.py
 Update the class `Rectangle` by updating the public method `def update(self, *args):` by changing the prototype to `update(self, *args, **kwargs)` that assigns a key/value argument to attributes:
