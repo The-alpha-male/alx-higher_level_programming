@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 
-"""Write the first class Base"""
+""" Base class to manage
+the id attribute of all classes that extend
+from Base and avoid duplicate the same code"""
 
 import json
 import csv
