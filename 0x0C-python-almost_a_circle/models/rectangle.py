@@ -7,15 +7,9 @@ from models.base import Base
 
 class Rectangle(Base):
     """
-    A subclass of class Base
-    Class Rectangle inherits from Base
-    Private instance attributes, each with its own public getter and setter:
-    __width -> width
-    __height -> height
-    __x -> x
-    __y -> y
-
+    A subclass Rectangle of super class Base
     """
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initialize instances for class rectangle"""
         self.width = width
