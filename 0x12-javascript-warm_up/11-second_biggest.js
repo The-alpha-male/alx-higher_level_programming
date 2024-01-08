@@ -1,8 +1,13 @@
 #!/usr/bin/node
-let nextMax = 0;
-const args = process.argv.slice(2);
-if (args.length > 1) {
-  args.sort();
-  nextMax = args[args.length - 2];
+
+const process = require('process');
+const args = process.argv;
+
+if (isNaN(args[2]) || isNaN(args[3])) {
+  console.log('0');
+} else {
+  const array = args.map(Number);
+  array.slice(2, args.length);
+  array.sort((a, b) => a - b);
+  console.log(array[array.length - 2]);
 }
-console.log(nextMax);
