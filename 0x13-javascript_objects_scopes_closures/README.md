@@ -65,10 +65,10 @@ Write a function that returns the number of occurrences in a list:
 Write a function that returns the reversed version of a list:
 
 - Prototype: `exports.esrever = function (list)`
-- You are not allow to use the built-in method reverse
+- You are not allow to use the built-in method `reverse`
 
 ## 9-logme.js
-Write a function that prints the number of arguments already printed and the new argument value. (see example below)
+Write a function that prints the number of arguments already printed and the new argument value.
 
 - Prototype: `exports.logMe = function (item)`
 - Output format: `<number arguments already printed>: <current argument value>`
