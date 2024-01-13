@@ -1,31 +1,42 @@
 #!/usr/bin/python3
 """
-python script that lists all states from the database hbtn_0e_0_usa with
-a given name
+Module that connects a python script to a database
 """
 
-import MySQLdb
-from sys import argv
-
 if __name__ == "__main__":
-    db = MySQLdb.connect(
-            host="localhost",
-            port=3306,
-            user=argv[1],
-            passwd=argv[2],
-            db=argv[3],
-            charset="utft8",
-            )
-    cursor = db.cursor()
-    cursor.execute(
-        "SELECT * FROM states WHERE name LIKE '{:s}' ORDER BY \
-    id ASC".format(
-            argv[4]
+
+    import MySQLdb
+    from sys import argv
+
+    # Connect database using command-line arguments
+    my_db = MySQLdb.connect(
+        host='localhost',
+        user=argv[1],
+        password=argv[2],
+        db=argv[3],
+        port=3306
         )
-    )
-    rows = cursor.fetchall()
-    for row in rows:
-        if row[1] == argv[4]:
-            print(row)
-    cursor.close()
-    db.close()
+
+    # Create cursor obj to interact with database
+    my_cursor = my_db.cursor()
+
+    # Execute a SELECT query to fetch data
+    my_cursor.execute(
+        """
+        SELECT * FROM states  WHERE name LIKE BINARY '{}'
+        ORDER BY states.id ASC
+        """.format(argv[4])
+        )
+
+    # fetch all the data returned by the query
+    my_data = my_cursor.fetchall()
+
+    # Iterate through the fetched data and print each row
+    for row in my_data:
+        print(row)
+
+    # Close all cursors
+    my_cursor.close()
+
+    # Close all databases
+    my_db.close()
