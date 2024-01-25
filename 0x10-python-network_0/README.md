@@ -36,7 +36,7 @@ Write a Bash script that takes in a URL, sends a POST request to the passed URL,
 ## 6-peak.py, 6-peak.txt
 Write a function that finds a peak in a list of unsorted integers.
 
-- Prototype: `def find_peak(list_of_integers)`:
+- Prototype: `def find_peak(list_of_integers):`
 - You are not allowed to import any module
 - Your algorithm must have the lowest complexity (hint: you don’t need to go through all numbers to find a peak)
 - `6-peak.py` must contain the function
