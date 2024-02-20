@@ -1,15 +1,15 @@
 #!/usr/bin/node
 
-//import the module
+// import the module
 const request = require('request');
 
-//first argument is the API URL
-const ApiUrl = process.argv[2];
+// The first argument is the API URL
+const apiUrl = process.argv[2];
 
 const dictionary = {};
 
-//make HTTP GET request to API URL
-request(ApiUrl, function (error, response, body) {
+// Make an HTTP GET request to the API URL
+request(apiUrl, function (error, response, body) {
   if (error) {
     console.error(error);
   } else {
