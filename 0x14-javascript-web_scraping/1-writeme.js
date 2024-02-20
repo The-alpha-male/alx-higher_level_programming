@@ -10,9 +10,9 @@ const file = process.argv[2];
 //second arg is the string to write
 const content = process.argv[3];
 
-//write to file
+// write to file
 fs.writeFile(file, content, 'utf-8', error => {
-	if (error) {
-		console.log(error);
-	}
+  if (error) {
+    console.log(error);
+  }
 });
