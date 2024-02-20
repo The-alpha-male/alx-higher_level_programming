@@ -1,13 +1,12 @@
 #!/usr/bin/node
 
-//import the mode
-
+// import the mode
 const fs = require('fs');
 
-//first arg of the file path
+// The first argument is the file path
 const file = process.argv[2];
 
-//second arg is the string to write
+// The second argument is the string to write
 const content = process.argv[3];
 
 // write to file
